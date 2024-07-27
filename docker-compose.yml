@@ -1,0 +1,9 @@
+
+version: '3.8'
+
+services:
+  db:
+    build: .
+    container_name: bot_container
+    env_file:
+      - .env-non-dev
