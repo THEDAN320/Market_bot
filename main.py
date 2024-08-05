@@ -10,9 +10,9 @@ from aiogram.fsm.storage.memory import MemoryStorage
 
 from aiogram_dialog import setup_dialogs
 
-from config import TOKEN
+from Router import main_router
 
-logging.config.fileConfig("logging.ini")
+from config import TOKEN
 
 
 def signal_handler(sig, frame):
@@ -30,6 +30,7 @@ async def main():
     bot = Bot(token=TOKEN[:46])
     storage = MemoryStorage()
     dp = Dispatcher(storage=storage)
+    dp.include_router(main_router)
     setup_dialogs(dp)
 
     # удаляем вебхуки и запускаем бота

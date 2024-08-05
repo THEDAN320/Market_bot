@@ -6,7 +6,6 @@ class Menu(StatesGroup):
     """state group for menu."""
 
     main = State()
-    comments = State()
     contacts = State()
     instruction = State()
 
@@ -15,9 +14,14 @@ class Basket(StatesGroup):
     """state group for basket."""
 
     main = State()
+    pay = State()
+    product_info = State()
 
 
 class Catalog(StatesGroup):
     """state group for catalog."""
 
-    main = State()
+    choice_city = State()
+    choice_address = State()
+    choice_product = State()
+    product_info = State()
